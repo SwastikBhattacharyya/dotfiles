@@ -113,3 +113,20 @@ EOF
   systemctl --user enable change_wallpaper.timer
   systemctl --user start change_wallpaper.timer
 }
+
+stow_dotfiles() {
+  local directories=(
+    "hyprland"
+    "neovim"
+    "rofi"
+    "swww"
+    "wallpapers"
+  )
+
+  clear
+  header "Stowing dotfiles"
+  for directory in "${directories[@]}"; do
+    echo "stowing ${directory}"
+    stow "${directory}"
+  done
+}

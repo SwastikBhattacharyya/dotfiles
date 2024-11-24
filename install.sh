@@ -8,3 +8,4 @@ install_required_packages
 install_dev_packages
 configure_dev_packages
 configure_swww
+stow_dotfiles
