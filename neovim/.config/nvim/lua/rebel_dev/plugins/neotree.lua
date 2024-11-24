@@ -20,6 +20,6 @@ return {
 		})
 
 		local keymap = vim.keymap
-		keymap.set("n", "<leader>ee", "<cmd>Neotree float<CR>", { desc = "Toggle file explorer" })
+		keymap.set("n", "<leader>ee", "<cmd>Neotree toggle left<CR>", { desc = "Toggle file explorer" })
 	end,
 }
