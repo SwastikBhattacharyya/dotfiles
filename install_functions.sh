@@ -37,7 +37,7 @@ install_required_packages() {
     "wireplumber"
   )
   local paru_packages=(
-    "zen-browser-bin"
+    "brave-bin"
   )
 
   install_packages "pacman" "${pacman_packages[*]}"
