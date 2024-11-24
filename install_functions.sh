@@ -28,6 +28,8 @@ install_preliminary_packages() {
 
 install_required_packages() {
   local pacman_packages=(
+    "fish"
+    "fisher"
     "gtk3"
     "hyprland"
     "kitty"
@@ -46,6 +48,7 @@ install_required_packages() {
     "ttf-nerd-fonts-symbols"
     "ttf-nerd-fonts-symbols-mono"
     "ttf-roboto-mono-nerd"
+    "waybar"
     "wireplumber"
     "xdg-desktop-portal-hyprland"
   )
@@ -142,4 +145,10 @@ stow_dotfiles() {
     echo "stowing ${directory}"
     stow "${directory}"
   done
+}
+
+configure_fish() {
+  chsh -s /usr/bin/fish
+  chmod +x ./fish_plugins.sh
+  ./fish_plugins.sh
 }
