@@ -50,6 +50,7 @@ install_required_packages() {
   )
   local paru_packages=(
     "brave-bin"
+    "hyprshot"
     "swww"
   )
 
