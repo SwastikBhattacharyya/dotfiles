@@ -1,0 +1,9 @@
+[Unit]
+Description=Change wallpaper
+After=swww.service
+
+[Service]
+ExecStart=/bin/bash /home/rebel_dev/.config/swww/swww.sh
+
+[Install]
+WantedBy=default.target

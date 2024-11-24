@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer to change wallpapers every hour
+
+[Timer]
+OnCalendar=*-*-* *:*:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

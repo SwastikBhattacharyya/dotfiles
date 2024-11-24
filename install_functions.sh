@@ -40,6 +40,7 @@ install_required_packages() {
   )
   local paru_packages=(
     "brave-bin"
+    "swww"
   )
 
   install_packages "pacman" "${pacman_packages[*]}"
@@ -82,4 +83,33 @@ configure_dev_packages() {
   clear
   header "Configuring development packages"
   rustup default stable
+}
+
+configure_swww() {
+  local user_home
+  user_home=$(whoami)
+
+  clear
+  header "Configuring swww"
+  chmod +x ./swww/.config/swww/swww.sh
+
+  cat <<EOF >./swww/.config/systemd/user/change_wallpaper.service
+[Unit]
+Description=Change wallpaper
+After=swww.service
+
+[Service]
+ExecStart=/bin/bash /home/${user_home}/.config/swww/swww.sh
+
+[Install]
+WantedBy=default.target
+EOF
+
+  systemctl --user daemon-reload
+  systemctl --user enable swww.service
+  systemctl --user start swww.service
+  systemctl --user enable change_wallpaper.service
+  systemctl --user start change_wallpaper.service
+  systemctl --user enable change_wallpaper.timer
+  systemctl --user start change_wallpaper.timer
 }

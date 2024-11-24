@@ -7,3 +7,4 @@ install_preliminary_packages
 install_required_packages
 install_dev_packages
 configure_dev_packages
+configure_swww
