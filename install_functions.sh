@@ -26,3 +26,20 @@ install_preliminary_packages() {
   header "Installing preliminary packages"
   install_packages "pacman" "${packages[*]}"
 }
+
+install_required_packages() {
+  local pacman_packages=(
+    "gtk3"
+    "hyprland"
+    "kitty"
+    "pipewire"
+    "pipewire-pulse"
+    "wireplumber"
+  )
+  local paru_packages=(
+    "zen-browser-bin"
+  )
+
+  install_packages "pacman" "${pacman_packages[*]}"
+  install_packages "paru" "${paru_packages[*]}"
+}
