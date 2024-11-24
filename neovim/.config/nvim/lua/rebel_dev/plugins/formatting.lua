@@ -34,7 +34,9 @@ return {
 
 		conform.formatters.beautysh = {
 			args = {
-				"--indent-size 2",
+				"--indent-size",
+				"2",
+				"$FILENAME",
 			},
 		}
 
