@@ -32,8 +32,11 @@ install_required_packages() {
     "gtk3"
     "hyprland"
     "kitty"
+    "papirus-icon-theme"
     "pipewire"
     "pipewire-pulse"
+    "rofi-wayland"
+    "ttf-jetbrains-mono-nerd"
     "wireplumber"
   )
   local paru_packages=(
