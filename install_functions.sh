@@ -5,8 +5,7 @@ source ./utils.sh
 check_paru_install() {
   clear
   header "Checking for paru installation"
-  if pacman -Qi "paru" > /dev/null
-  then
+  if pacman -Qi "paru" >/dev/null; then
     echo "paru is installed on your system"
   else
     echo "This install script requires paru to be the AUR helper of your system. Please uninstall your current AUR helper and install paru on your system."
@@ -53,18 +52,19 @@ install_dev_packages() {
     "jdk17-openjdk"
     "lib32-clang"
     "luarocks"
+    "markdownlint-cli"
     "nodejs"
     "npm"
     "prettier"
     "python-isort"
     "python-black"
     "rustup"
+    "shfmt"
     "stylelint-config-standard"
     "stylua"
     "taplo-cli"
   )
   local paru_packages=(
-    "beautysh"
     "cmake-format"
     "google-java-format"
     "prettierd"
@@ -74,8 +74,8 @@ install_dev_packages() {
   clear
   header "Installing development packages"
 
-  install_packages "pacman" "${pacman_packages[*]}"
-  install_packages "paru" "${paru_packages[*]}"
+  install_packages "pacman" "${pacman_packages[@]}"
+  install_packages "paru" "${paru_packages[@]}"
 }
 
 configure_dev_packages() {

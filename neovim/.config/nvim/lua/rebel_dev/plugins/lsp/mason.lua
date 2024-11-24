@@ -53,7 +53,6 @@ return {
 				"oxlint",
 				"jsonlint",
 				"luacheck",
-				"markdownlint",
 				"pylint",
 				"sqlfluff",
 				"yamllint",

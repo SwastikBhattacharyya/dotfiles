@@ -18,7 +18,7 @@ return {
 				markdown = { "prettierd", "prettier", stop_after_first = true },
 				python = { "isort", "black" },
 				rust = { "rustfmt" },
-				sh = { "beautysh" },
+				sh = { "shfmt" },
 				sql = { "sqlfmt" },
 				toml = { "taplo" },
 				typescript = { "prettierd", "prettier", stop_after_first = true },
@@ -31,14 +31,6 @@ return {
 				timeout_ms = 1000,
 			},
 		})
-
-		conform.formatters.beautysh = {
-			args = {
-				"--indent-size",
-				"2",
-				"$FILENAME",
-			},
-		}
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			conform.format({

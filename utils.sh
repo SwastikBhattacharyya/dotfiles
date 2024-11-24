@@ -3,7 +3,8 @@
 header() {
   local header="$1"
   local len=${#header}
-  local border=$(printf "%-${len}s" "" | tr " " "*")
+  local border
+  border=$(printf "%-${len}s" "" | tr " " "*")
 
   echo "${border}"
   echo "${header}"
@@ -19,6 +20,13 @@ install_packages() {
   fi
 
   if [ -n "${packages}" ]; then
-    $manager --needed -S ${packages}
+    for package in ${packages}; do
+      if ! ${manager} -Qi "${package}" >/dev/null; then
+        echo "Installing ${package}"
+        ${manager} -S --noconfirm "${package}"
+      else
+        echo "${package} is already installed"
+      fi
+    done
   fi
 }
