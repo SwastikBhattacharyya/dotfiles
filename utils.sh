@@ -23,7 +23,7 @@ install_packages() {
     for package in ${packages}; do
       if ! ${manager} -Qi "${package}" >/dev/null; then
         echo "Installing ${package}"
-        ${manager} -S --noconfirm "${package}"
+        ${manager} -S "${package}"
       else
         echo "${package} is already installed"
       fi

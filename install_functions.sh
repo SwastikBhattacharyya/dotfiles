@@ -47,6 +47,7 @@ install_required_packages() {
     "ttf-nerd-fonts-symbols-mono"
     "ttf-roboto-mono-nerd"
     "wireplumber"
+    "xdg-desktop-portal-hyprland"
   )
   local paru_packages=(
     "brave-bin"
