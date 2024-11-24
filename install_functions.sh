@@ -1,4 +1,4 @@
-#!/usr/bin bash
+#!/usr/bin/bash
 
 source ./utils.sh
 
@@ -42,4 +42,41 @@ install_required_packages() {
 
   install_packages "pacman" "${pacman_packages[*]}"
   install_packages "paru" "${paru_packages[*]}"
+}
+
+install_dev_packages() {
+  local pacman_packages=(
+    "clang"
+    "jdk17-openjdk"
+    "lib32-clang"
+    "luarocks"
+    "nodejs"
+    "npm"
+    "prettier"
+    "python-isort"
+    "python-black"
+    "rustup"
+    "stylelint-config-standard"
+    "stylua"
+    "taplo-cli"
+  )
+  local paru_packages=(
+    "beautysh"
+    "cmake-format"
+    "google-java-format"
+    "prettierd"
+    "sqlfmt-bin"
+  )
+
+  clear
+  header "Installing development packages"
+
+  install_packages "pacman" "${pacman_packages[*]}"
+  install_packages "paru" "${paru_packages[*]}"
+}
+
+configure_dev_packages() {
+  clear
+  header "Configuring development packages"
+  rustup default stable
 }
