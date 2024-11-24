@@ -36,6 +36,7 @@ install_required_packages() {
     "pipewire-pulse"
     "rofi-wayland"
     "ttf-jetbrains-mono-nerd"
+    "ttf-roboto-mono-nerd"
     "wireplumber"
   )
   local paru_packages=(
@@ -117,6 +118,7 @@ EOF
 stow_dotfiles() {
   local directories=(
     "hyprland"
+    "kitty"
     "neovim"
     "rofi"
     "swww"
