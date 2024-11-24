@@ -137,6 +137,7 @@ stow_dotfiles() {
     "rofi"
     "swww"
     "wallpapers"
+    "waybar"
   )
 
   clear
