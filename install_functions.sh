@@ -28,6 +28,7 @@ install_preliminary_packages() {
 
 install_required_packages() {
   local pacman_packages=(
+    "dunst"
     "fish"
     "fisher"
     "gtk3"
@@ -145,6 +146,7 @@ EOF
 
 stow_dotfiles() {
   local directories=(
+    "dunst"
     "hyprland"
     "kitty"
     "neovim"
