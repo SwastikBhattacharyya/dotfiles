@@ -54,6 +54,7 @@ install_required_packages() {
   )
   local paru_packages=(
     "brave-bin"
+    "hyprpolkitagent-git"
     "hyprshot"
     "swww"
     "uwsm"
@@ -61,6 +62,13 @@ install_required_packages() {
 
   install_packages "pacman" "${pacman_packages[*]}"
   install_packages "paru" "${paru_packages[*]}"
+}
+
+configure_hyprland() {
+  clear
+  header "Configuring hyprland"
+  systemctl --user enable hyprpolkitagent.service
+  systemctl --user start hyprpolkitagent.service
 }
 
 install_dev_packages() {
@@ -155,6 +163,9 @@ stow_dotfiles() {
 }
 
 configure_fish() {
+  clear
+  header "Configuring fish"
+
   chsh -s /usr/bin/fish
   chmod +x ./fish_plugins.sh
   ./fish_plugins.sh

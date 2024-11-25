@@ -5,6 +5,7 @@ source ./install_functions.sh
 check_paru_install
 install_preliminary_packages
 install_required_packages
+configure_hyprland
 install_dev_packages
 configure_dev_packages
 configure_swww
