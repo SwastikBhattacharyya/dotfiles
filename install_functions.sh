@@ -56,6 +56,7 @@ install_required_packages() {
     "brave-bin"
     "hyprshot"
     "swww"
+    "uwsm"
   )
 
   install_packages "pacman" "${pacman_packages[*]}"
@@ -112,12 +113,17 @@ configure_swww() {
 [Unit]
 Description=Change wallpaper
 After=swww.service
+Requires=swww.service
+DefaultDependencies=no
 
 [Service]
 ExecStart=/bin/bash /home/${user_home}/.config/swww/swww.sh
+Slice=background-graphical.slice
+Restart=on-failure
+RestartSec=5
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
 EOF
 
   systemctl --user daemon-reload

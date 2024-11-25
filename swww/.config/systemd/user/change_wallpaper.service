@@ -1,9 +1,14 @@
 [Unit]
 Description=Change wallpaper
 After=swww.service
+Requires=swww.service
+DefaultDependencies=no
 
 [Service]
 ExecStart=/bin/bash /home/rebel_dev/.config/swww/swww.sh
+Slice=background-graphical.slice
+Restart=on-failure
+RestartSec=5
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
