@@ -11,3 +11,4 @@ configure_dev_packages
 configure_swww
 stow_dotfiles
 configure_fish
+configure_sddm
