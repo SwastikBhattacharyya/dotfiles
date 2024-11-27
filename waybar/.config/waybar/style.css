@@ -42,6 +42,14 @@ window#waybar {
   font-size: 18px;
 }
 
+#bluetooth {
+  color: #70baff;
+}
+
+#bluetooth.off {
+  color: #0069cc;
+}
+
 #pulseaudio {
   color: #6ecb9e;
 }

@@ -12,3 +12,4 @@ configure_swww
 stow_dotfiles
 configure_fish
 configure_sddm
+configure_bluetooth

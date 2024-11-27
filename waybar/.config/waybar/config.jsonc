@@ -11,6 +11,8 @@
     "hyprland/window"
   ],
   "modules-right": [
+    "bluetooth",
+    "custom/separator",
     "pulseaudio#sink",
     "pulseaudio#source",
     "custom/separator",
@@ -50,15 +52,26 @@
       "10": ""
     }
   },
+  "hyprland/window": {
+    "icon": true,
+    "icon-size": 24
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-on": "󰂯",
+    "format-connected": "󰂰",
+    "format-off": "󰂲"
+  },
   "pulseaudio#sink": {
     "format": "{icon}",
-    "format-bluetooth": "{icon} 󰂯",
-    "format-bluetooth-muted": "󰝟 {icon} 󰂲",
+    "format-bluetooth": "{icon} 󰂰",
+    "format-bluetooth-muted": "{icon} 󰂰",
     "format-muted": "󰝟",
     "format-icons": {
       "headphone": "󰋋",
       "hands-free": "󰋎",
       "headset": "󰋎",
+      "headset-muted": "󰋐",
       "phone": "󰏲",
       "portable": "󰏲",
       "car": "󰄋",
@@ -145,7 +158,7 @@
     "icon-size": 20
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   }

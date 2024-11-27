@@ -29,6 +29,8 @@ install_preliminary_packages() {
 install_required_packages() {
   local pacman_packages=(
     "bat"
+    "bluez"
+    "bluez-utils"
     "dunst"
     "fd"
     "fish"
@@ -197,4 +199,11 @@ configure_sddm() {
   sudo -u root sed -i 's|Background="Backgrounds/1.png"|Background="Backgrounds/background.jpg"|g' ${THEME_CONF}
   sudo -u root sed -i 's|DimBackground="0.0"|DimBackground="0.25"|g' ${THEME_CONF}
   sudo -u root sed -i 's|BlurMax=""|BlurMax="32"|g' ${THEME_CONF}
+}
+
+configure_bluetooth() {
+  clear
+  header "Configuring Bluetooth"
+  sudo -u root systemctl enable bluetooth.service
+  sudo -u root systemctl start bluetooth.service
 }
