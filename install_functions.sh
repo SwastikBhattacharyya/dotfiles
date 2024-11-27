@@ -50,6 +50,7 @@ install_required_packages() {
     "sddm"
     "ttf-font-awesome"
     "ttf-jetbrains-mono-nerd"
+    "ttf-inter"
     "ttf-nerd-fonts-symbols"
     "ttf-nerd-fonts-symbols-mono"
     "ttf-roboto-mono-nerd"
