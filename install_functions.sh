@@ -32,6 +32,7 @@ install_required_packages() {
     "bluez"
     "bluez-utils"
     "dunst"
+    "fastfetch"
     "fd"
     "fish"
     "fzf"
@@ -159,6 +160,7 @@ EOF
 stow_dotfiles() {
   local directories=(
     "dunst"
+    "gtk"
     "hyprland"
     "kitty"
     "neovim"
