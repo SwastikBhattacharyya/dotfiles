@@ -63,6 +63,7 @@ install_required_packages() {
     "waybar"
     "wireplumber"
     "xdg-desktop-portal-hyprland"
+    "zellij"
   )
   local paru_packages=(
     "bibata-cursor-theme-bin"
@@ -168,6 +169,7 @@ stow_dotfiles() {
     "swww"
     "wallpapers"
     "waybar"
+    "zellij"
   )
 
   clear
