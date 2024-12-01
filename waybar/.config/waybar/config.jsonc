@@ -104,14 +104,12 @@
   },
   "battery": {
     "states": {
-      "full": 100,
       "warning": 30,
       "critical": 15
     },
     "format": "{icon}",
     "tooltip-format": "{capacity}% {timeTo}",
     "format-icons": {
-      "full": "󰁹",
       "default": [
         "󰁺",
         "󰁻",
