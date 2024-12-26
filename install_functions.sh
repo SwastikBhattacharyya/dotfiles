@@ -31,6 +31,7 @@ install_required_packages() {
     "bat"
     "bluez"
     "bluez-utils"
+    "brightnessctl"
     "dunst"
     "fastfetch"
     "fd"
