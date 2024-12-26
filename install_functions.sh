@@ -206,7 +206,6 @@ configure_sddm() {
   sudo -u root sed -i 's|Font="Open Sans"|Font="Noto Sans"|g' ${THEME_CONF}
   sudo -u root sed -i 's|HeaderText=""|HeaderText="Welcome to RedStar"|g' ${THEME_CONF}
   sudo -u root sed -i 's|Background="Backgrounds/1.png"|Background="Backgrounds/background.jpg"|g' ${THEME_CONF}
-  sudo -u root sed -i 's|DimBackground="0.0"|DimBackground="0.25"|g' ${THEME_CONF}
   sudo -u root sed -i 's|BlurMax=""|BlurMax="32"|g' ${THEME_CONF}
 }
 
