@@ -39,6 +39,7 @@ install_required_packages() {
     "fisher"
     "gtk3"
     "hyprland"
+    "inter-font"
     "kitty"
     "noto-fonts"
     "noto-fonts-cjk"
@@ -56,7 +57,6 @@ install_required_packages() {
     "sddm"
     "ttf-font-awesome"
     "ttf-jetbrains-mono-nerd"
-    "ttf-inter"
     "ttf-nerd-fonts-symbols"
     "ttf-nerd-fonts-symbols-mono"
     "ttf-roboto-mono-nerd"
@@ -108,6 +108,7 @@ install_dev_packages() {
     "cmake-format"
     "google-java-format"
     "prettierd"
+    "python38"
     "sqlfmt-bin"
   )
 
