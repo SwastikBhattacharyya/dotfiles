@@ -74,6 +74,7 @@ install_required_packages() {
     "sddm-astronaut-theme"
     "swww"
     "uwsm"
+    "volnoti"
   )
 
   install_packages "pacman" "${pacman_packages[*]}"
