@@ -71,7 +71,7 @@ install_required_packages() {
     "brave-bin"
     "hyprpolkitagent-git"
     "hyprshot"
-    "sddm-astronaut-theme"
+    "sddm-sugar-candy-git"
     "swww"
     "uwsm"
     "volnoti"
@@ -193,21 +193,23 @@ configure_fish() {
 }
 
 configure_sddm() {
-  local THEME_CONF="/usr/share/sddm/themes/sddm-astronaut-theme/Themes/theme1.conf"
+  local THEME_CONF="/usr/share/sddm/themes/sugar-candy/theme.conf"
 
   clear
   header "Configuring SDDM"
   sudo -u root systemctl enable sddm.service
   sudo -u root mkdir -p /etc/sddm.conf.d
-  sudo -u root sh -c 'printf "[Theme]\nCurrent=sddm-astronaut-theme\nCursorTheme=Bibata-Modern-Ice\nCursorSize=24\n" >/etc/sddm.conf.d/sddm.conf'
+  sudo -u root sh -c 'printf "[Theme]\nCurrent=sugar-candy\nCursorTheme=Bibata-Modern-Ice\nCursorSize=24\n" >/etc/sddm.conf.d/sddm.conf'
   sudo -u root sh -c 'printf "[Icon Theme]\nInherits=Bibata-Modern-Ice\nCursorSize=24\n" >/usr/share/icons/default/index.theme'
 
-  sudo -u root cp sddm/background.jpg /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/
+  sudo -u root cp sddm/background.jpg /usr/share/sddm/themes/sugar-candy/Backgrounds/Background.jpg
 
-  sudo -u root sed -i 's|Font="Open Sans"|Font="Noto Sans"|g' ${THEME_CONF}
-  sudo -u root sed -i 's|HeaderText=""|HeaderText="Welcome to RedStar"|g' ${THEME_CONF}
-  sudo -u root sed -i 's|Background="Backgrounds/1.png"|Background="Backgrounds/background.jpg"|g' ${THEME_CONF}
-  sudo -u root sed -i 's|BlurMax=""|BlurMax="32"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|Background="Backgrounds/Mountain.jpg"|Background="Backgrounds/Background.jpg"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|DimBackgroundImage="0.0"|DimBackgroundImage="0.25"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|ScreenWidth="1440"|ScreenWidth="1920"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|ScreenHeight="900"|ScreenHeight="1080"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|BlurRadius="100"|BlurRadius="10"|g' ${THEME_CONF}
+  sudo -u root sed -i 's|FormPosition="left"|FormPosition="center"|g' ${THEME_CONF}
 }
 
 configure_bluetooth() {
